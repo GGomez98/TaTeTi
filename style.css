@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#main-container{
+    border: black solid 1px;
+    width: 99.87vw;
+    height: 99.8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#grid{
+    border: red solid 1px;
+    width: 40%;
+    height: 70%;
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 30% 30% 30%;
+    justify-content: center;
+    align-content: center;
+}
+
+.square{
+    border: blue solid 1px;
+}
