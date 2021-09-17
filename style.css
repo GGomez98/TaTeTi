@@ -26,4 +26,7 @@
 
 .square{
     border: blue solid 1px;
+    display: flex;
+    justify-content: center;
+    font-size: 9rem;
 }
