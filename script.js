@@ -10,7 +10,6 @@ play()
 function assignContent(arg){
     if(!player1Turn){
         arg.textContent = PLAYER2
-        player1Turn = true
         switch(arg.id){
             case '1':
             case '2':
@@ -26,10 +25,10 @@ function assignContent(arg){
                 grid[2].splice(arg.id-7,1,PLAYER2)
                 break;
         }
+        player1Turn = true
     }
     else{
         arg.textContent = PLAYER1
-        player1Turn = false
         switch(arg.id){
             case '1':
             case '2':
@@ -45,6 +44,7 @@ function assignContent(arg){
                 grid[2].splice(arg.id-7,1,PLAYER1)
                 break;
         }
+        player1Turn = false
     }
 }
 
@@ -102,4 +102,8 @@ function winsByDiagonal(player){
     return grid[0][0]==player&&grid[1][1]==player&&grid[2][2]==player||grid[0][2]==player&&grid[1][1]==player&&grid[2][0]==player
 }
 
-//para el reset voy a usar reload
+function reset(){
+    player1Turn = true
+    grid = [[],[],[]];
+    play();
+}
