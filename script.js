@@ -78,6 +78,9 @@ function play(){
             else if(player2Wins()){
                 winner.textContent = 'Ganador jugador 2'
             }
+            else if((!player1Wins()&&!player2Wins())&&grid.flat().indexOf(undefined)==-1){
+                winner.textContent = 'Empate'
+            }
         })
     })
 }
