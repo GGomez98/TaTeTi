@@ -1,11 +1,11 @@
-let square = document.querySelectorAll('.square')
+const square = document.querySelectorAll('.square')
+const reset = document.getElementById('reset-button')
+const winner = document.getElementById('Winner')
 
 const PLAYER1 = 'X'
 const PLAYER2 = 'O'
 let player1Turn = true
 let grid = [[],[],[]];
-
-play()
 
 function assignContent(arg){
     if(!player1Turn){
@@ -73,10 +73,10 @@ function play(){
                 assignContent(element)
             }
             if(player1Wins()){
-                console.log('gano jugador 1')
+                winner.textContent = 'Ganador jugador 1'
             }
             else if(player2Wins()){
-                console.log('gano jugador 2')
+                winner.textContent = 'Ganador jugador 2'
             }
         })
     })
@@ -102,8 +102,6 @@ function winsByDiagonal(player){
     return grid[0][0]==player&&grid[1][1]==player&&grid[2][2]==player||grid[0][2]==player&&grid[1][1]==player&&grid[2][0]==player
 }
 
-function reset(){
-    player1Turn = true
-    grid = [[],[],[]];
-    play();
-}
+reset.addEventListener('click', (e) => location.reload())
+
+play()
